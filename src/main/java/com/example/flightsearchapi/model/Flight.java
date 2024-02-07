@@ -29,4 +29,6 @@ public class Flight {
 
     private double price;
 
+    public Flight(String s, String s1, long l, long l1, int price) {
+    }
 }
