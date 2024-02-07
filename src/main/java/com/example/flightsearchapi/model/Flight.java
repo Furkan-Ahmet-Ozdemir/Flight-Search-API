@@ -1,36 +1,26 @@
 package com.example.flightsearchapi.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 import java.time.LocalDateTime;
 
-@Entity
 @Getter
 @Setter
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity(name = "flights")
 public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private long id;
+    private Long id;
 
-//    @Column(nullable = false)
-//    private String departureAirport;
-//
-//    @Column(nullable = false)
-//    private String arrivalAirport;
+    @Column(nullable = false)
+    private Long departureAirportId;
 
-    @ManyToOne(cascade = CascadeType.DETACH)
-//    @JoinColumn(name = "Departure-Airport")
-    private Airport departureAirport;
-
-    @ManyToOne(cascade = CascadeType.DETACH)
-//    @JoinColumn(name = "Arrival-Airport")
-    private Airport arrivalAirport;
-
-
+    @Column(nullable = false)
+    private Long arrivalAirportId;
 
     @Column(nullable = false)
     private LocalDateTime departureTime;
