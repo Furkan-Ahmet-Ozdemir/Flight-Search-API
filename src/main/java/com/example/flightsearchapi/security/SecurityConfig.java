@@ -1,4 +1,4 @@
-package com.example.flightsearchapi.config;
+package com.example.flightsearchapi.security;
 
 import com.example.flightsearchapi.model.Role;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
